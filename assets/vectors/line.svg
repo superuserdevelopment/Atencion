@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="188" height="4" viewBox="0 0 188 4">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: none;
+        stroke-width: 4px;
+      }
+
+      .cls-1 {
+        stroke: #f75972;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-linecap: round;
+      }
+
+      .cls-2 {
+        stroke: #40e0d0;
+      }
+
+      .cls-3 {
+        stroke: #8015e8;
+      }
+
+      .cls-4 {
+        stroke: #fadf12;
+      }
+    </style>
+  </defs>
+  <g id="Component_26_1" data-name="Component 26 – 1" transform="translate(2 2)">
+    <line id="Line_72" data-name="Line 72" class="cls-1" x2="184"/>
+    <line id="Line_73" data-name="Line 73" class="cls-2" x2="70" transform="translate(114)"/>
+    <line id="Line_74" data-name="Line 74" class="cls-3" x2="53" transform="translate(33)"/>
+    <line id="Line_75" data-name="Line 75" class="cls-4" x2="53" transform="translate(86)"/>
+  </g>
+</svg>
