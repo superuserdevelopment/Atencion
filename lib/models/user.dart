@@ -1,23 +1,34 @@
 class User {
   final String uid;
-  List<String> recievedNoteIds = [];
-  List<String> sentNoteIds = [];
-  Map Friends = {}; // 'Friend's name : uid of Friend
+  List<String> enrolledCoursesIds = [];
+  List<String> wishlistedCoursesIds = [];
+  Map<String, int> progress = {}; // course uid : progress index
 
   User({this.uid});
-  void addUserNote(String noteId) {
-    recievedNoteIds.add(noteId);
+
+  void addEnrolledCourse(String courseId) {
+    enrolledCoursesIds.add(courseId);
+    progress[courseId] = 0;
   }
 
-  void removeUserNote(String noteId) {
-    sentNoteIds.remove(noteId);
+  void removeEnrolledCourse(String courseId) {
+    enrolledCoursesIds.remove(courseId);
+    progress.remove(courseId);
   }
 
-  void addFriend(String name, String uid) {
-    Friends[name] = uid;
+  void addWishlistedCourse(String courseId) {
+    wishlistedCoursesIds.add(courseId);
   }
 
-  void removeFriend(String name, String uid) {
-    Friends.remove(uid);
+  void removeWishlistedCourse(String courseId) {
+    wishlistedCoursesIds.remove(courseId);
+  }
+
+  void incProgress(String uid) {
+    progress[uid]++;
+  }
+
+  void resetProgress(String uid) {
+    progress[uid] = 0;
   }
 }

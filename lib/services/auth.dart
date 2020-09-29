@@ -1,8 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:e_learning/models/user.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthenticationService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
   //Converts FirebaseUser object to custom User Object
   User _convertUser(FirebaseUser user) {
     return (user != null ? User(uid: user.uid) : null);
@@ -62,4 +65,12 @@ class AuthenticationService {
       print(e);
     }
   }
+
+  //Sign in with Google
+  Future<String> signInWithGoogle() async {
+    _googleSignIn.signIn();
+  }
+
+  //Sign out with Google
+  void signOutGoogle() async {}
 }
