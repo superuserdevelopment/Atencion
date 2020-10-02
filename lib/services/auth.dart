@@ -8,7 +8,9 @@ class AuthenticationService {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   //Converts FirebaseUser object to custom User Object
   User _convertUser(FirebaseUser user) {
-    return (user != null ? User(uid: user.uid) : null);
+    return (user != null
+        ? User(uid: user.uid, name: user.displayName, email: user.email)
+        : null);
   }
 
   Stream<User> get user {

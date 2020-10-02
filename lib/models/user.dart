@@ -1,10 +1,12 @@
 class User {
   final String uid;
+  final String name;
+  final String email;
   List<String> enrolledCoursesIds = [];
   List<String> wishlistedCoursesIds = [];
   Map<String, int> progress = {}; // course uid : progress index
 
-  User({this.uid});
+  User({this.uid, this.name, this.email});
 
   void addEnrolledCourse(String courseId) {
     enrolledCoursesIds.add(courseId);

@@ -2,6 +2,7 @@ import 'package:e_learning/pages/account_fragment.dart';
 import 'package:e_learning/pages/courses_fragment.dart';
 import 'package:e_learning/pages/landing_fragment.dart';
 import 'package:e_learning/services/auth.dart';
+import 'package:e_learning/services/database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
@@ -13,12 +14,18 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final AuthenticationService _auth = AuthenticationService();
+  //final DatabaseService _databaseService = DatabaseService();
   final List<Widget> _fragments = [
     Landing_Fragment(),
     CoursesFragment(),
     AccountFragment()
   ];
   int _currentIndex = 0;
+  @override
+  void initState() {
+    super.initState();
+    //_databaseService.retrieveCourse();
+  }
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,7 @@
 import 'package:e_learning/pages/loading.dart';
 import 'package:e_learning/services/auth.dart';
 import 'package:e_learning/services/database.dart';
+import 'package:e_learning/widget_assets/message_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -49,7 +50,8 @@ class _LoginPageState extends State<LoginPage> {
                       shape: RoundedRectangleBorder(
                           borderRadius:
                               BorderRadius.all(Radius.circular(20.0))),
-                      color: Theme.of(context).accentColor,
+                      //color: Theme.of(context).accentColor,
+                      color: Colors.white,
                       child: Padding(
                         padding: const EdgeInsets.all(20.0),
                         child: Form(
@@ -491,7 +493,7 @@ class Logo extends StatelessWidget {
             style: TextStyle(
                 fontSize: 50.0,
                 fontWeight: FontWeight.bold,
-                color: Theme.of(context).accentColor),
+                color: Colors.white),
           ),
           SvgPicture.asset(
             'assets/vectors/line2.svg',
@@ -512,28 +514,6 @@ class Logo extends StatelessWidget {
     ) //App Logo,
         );
   }
-}
-
-Future<void> showAlertDialog(
-    String title, String message, BuildContext context) {
-  return (showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: Text(title),
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(20))),
-          titleTextStyle: TextStyle(
-              color: Colors.white, fontSize: 24.0, fontFamily: 'Circular'),
-          backgroundColor: Theme.of(context).primaryColor,
-          content: Text(
-            message,
-            style: TextStyle(
-              color: Colors.white,
-            ),
-          ),
-        );
-      }));
 }
 
 Widget _signInButton() {
